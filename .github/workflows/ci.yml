@@ -34,8 +34,7 @@ jobs:
           # Create a CI-friendly requirements file that excludes any local '-e' editable entries
           awk '!/^\s*-e\b/' requirements.txt > requirements-ci.txt
           pip install -r requirements-ci.txt
-          # Install the local package editable after dependencies
-          pip install -e .
+          # Do not install the local editable package in CI; tests run with PYTHONPATH=src
 
       - name: Run tests
         run: |
