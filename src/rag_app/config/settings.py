@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
 
 class Settings(BaseSettings):
-    GROQ_API_KEY: str = ""
+    #GROQ_API_KEY: str = ""
     CHROMA_DB_DIR: str = "data/chroma"
     EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
     GEN_AI_MODEL: str = "openai/gpt-oss-safeguard-20b"
