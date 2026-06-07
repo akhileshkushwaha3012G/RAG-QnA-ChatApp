@@ -38,4 +38,6 @@ jobs:
 
       - name: Run tests
         run: |
-          PYTHONPATH=src python -m pytest -q
+          echo "Repository files:"; ls -la
+          echo "Tests dir listing:"; ls -la tests || true
+          PYTHONPATH=src python -m pytest tests -q
