@@ -1,0 +1,30 @@
+[project]
+name = "rag-chromadb"
+version = "0.1.0"
+description = "RAG and embedding pipeline using ChromaDB and SentenceTransformer to summarise bhagvat gita"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb == 1.5.9",
+    "sentence-transformers == 5.2.0",
+    "groq == 1.4.0",
+    "python-dotenv>=1.0,<2.0",
+    "fastapi == 0.136.3",
+    "uvicorn[standard]>=0.22,<1.0",
+    "pydantic-settings == 2.10.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+rag-chromadb = "rag_app.cli:main"
